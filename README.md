@@ -28,7 +28,7 @@ All these functions return a promise. See the API Docs for more details.
 
 ### Example
 
-In order to use them, include the `gallery-io-utils` module.
+To start include the `gallery-io-utils` module.
 
 ```JavaScript
 YUI().use('gallery-io-utils', function (Y) {
