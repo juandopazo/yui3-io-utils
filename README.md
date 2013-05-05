@@ -24,7 +24,7 @@ functions:
 * `Y.io.script`. Loads a script.
 * `Y.io.css`. Loads a CSS stylesheet.
 
-All these functions return a promise. See the API Docs for more details.
+All these functions return a promise. See [the API Docs](http://juandopazo.github.io/yui3-io-utils/api/classes/io.html) for more details.
 
 ### Example
 
