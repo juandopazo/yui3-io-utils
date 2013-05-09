@@ -11,10 +11,11 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "yogi": "0.1.9"
+        "shifter": "0.3.3",
+        "grover": "0.1.14"
     },
     "scripts": {
-        "test": "yogi build --build-dir ./build --test"
+        "test": "shifter --build-dir ./build && grover --server tests/unit/index.html"
     },
     "repository": {
         "type": "git",
