@@ -1,6 +1,8 @@
 YUI3 IO Utils
 =============
 
+![Travis Build Status](https://api.travis-ci.org/juandopazo/yui3-io-utils.png)
+
 Extra utilities for doing IO request using promises. Includes the following
 functions:
 
