@@ -41,3 +41,8 @@ YUI().use('gallery-io-utils', function (Y) {
 
 });
 ```
+
+### Note to those using version 0.0.1
+
+Requirements are broken in this release. You can still use it by doing
+`YUI().use('io-base', 'promise', 'gallery-io-utils', ...)`.
