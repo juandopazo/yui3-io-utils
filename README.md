@@ -33,7 +33,9 @@ All these functions return a promise. See [the API Docs](http://juandopazo.githu
 To start include the `gallery-io-utils` module.
 
 ```JavaScript
-YUI().use('gallery-io-utils', function (Y) {
+YUI({
+    gallery: 'gallery-2013.05.10-00-54'
+}).use('gallery-io-utils', function (Y) {
     
     Y.io.getJSON('/foo/bar').then(function (data) {
         console.log(data);
@@ -45,4 +47,4 @@ YUI().use('gallery-io-utils', function (Y) {
 ### Note to those using version 0.0.1
 
 Requirements are broken in this release. You can still use it by doing
-`YUI().use('io-base', 'promise', 'gallery-io-utils', ...)`.
+`YUI(...).use('io-base', 'promise', 'gallery-io-utils', ...)`.
