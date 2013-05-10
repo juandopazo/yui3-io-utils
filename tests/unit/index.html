@@ -12,16 +12,8 @@
 <script>
 YUI({
     coverage: ['gallery-io-utils'],
-    filter: (window.location.search.match(/[?&]filter=([^&]+)/) || [])[1] || 'raw',
-    modules: {
-        'gallery-io-utils': {
-            fullpath: '../../build/gallery-io-utils/gallery-io-utils.js',
-            requires: [
-                'io-base',
-                'promise'
-            ]
-        }
-    }
+    filter: (window.location.search.match(/[?&]filter=([^&]+)/) || [])[1] || 'raw'
+    gallery: 'gallery-2013.05.10-00-54'
 }).use('test-console', 'test', 'json', 'jsonp', 'gallery-io-utils', 'module-tests', function(Y) {
     
     (new Y.Test.Console()).render('#logger');
