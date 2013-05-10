@@ -1,5 +1,5 @@
 {
-    "io-utils": {
+    "gallery-io-utils": {
         "requires": [
             "io-base",
             "promise"
