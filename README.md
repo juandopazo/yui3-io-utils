@@ -8,9 +8,9 @@ functions:
 
 * `Y.io.xhr`. Makes an Ajax request.
 * `Y.io.get`. Makes an Ajax request with HTTP method GET.
-* `Y.io.post`. Makes an Ajax request with POST method GET.
-* `Y.io.put`. Makes an Ajax request with PUT method GET.
-* `Y.io.delete`. Makes an Ajax request with DELETE method GET.
+* `Y.io.post`. Makes an Ajax request with HTTP method POST.
+* `Y.io.put`. Makes an Ajax request with HTTP method PUT.
+* `Y.io.delete`. Makes an Ajax request with HTTP method DELETE.
 * `Y.io.DELETE`. Alias for `Y.io.delete`.
 * `Y.io.json`. Makes an Ajax request and parses the result as JSON. Requires the
 `json` module.
