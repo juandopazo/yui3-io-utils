@@ -64,6 +64,18 @@ YUI.add('module-tests', function(Y) {
             });
 
             this.wait(500);
+        },
+
+        'abort() should reject the promise': function () {
+            var request = Y.io.xhr('delay/1');
+
+            request.abort();
+
+            this.failure(request, function (err) {
+                Assert.areEqual('abort', err.statusText, 'Error should be abortion');
+            });
+
+            this.wait();
         }
     }));
 
