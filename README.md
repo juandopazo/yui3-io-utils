@@ -3,8 +3,31 @@ YUI3 IO Utils
 
 ![Travis Build Status](https://api.travis-ci.org/juandopazo/yui3-io-utils.png)
 
-Extra utilities for doing IO request using promises. Includes the following
-functions:
+Extra utilities for doing IO request using promises.
+
+Getting Started
+---------------
+
+Create a new YUI instance for your application and populate it with the modules you need by specifying them as arguments to the `YUI().use()` method. YUI will automatically load any dependencies required by the modules you specify. 
+
+```html
+<script>
+YUI({
+    gallery: 'gallery-2013.05.15-21-12'
+}).use('gallery-affix', function (Y) {
+    
+    Y.io.getJSON('/foo/bar').then(function (data) {
+        console.log(data);
+    });
+
+});
+</script>
+```
+
+API Summary
+-----------
+
+IO Utils includes the following functions:
 
 * `Y.io.xhr`. Makes an Ajax request.
 * `Y.io.get`. Makes an Ajax request with HTTP method GET.
@@ -28,22 +51,6 @@ functions:
 
 All these functions return a promise. See [the API Docs](http://juandopazo.github.io/yui3-io-utils/api/classes/io.html) for more details.
 
-### Example
-
-To start include the `gallery-io-utils` module.
-
-```JavaScript
-YUI({
-    gallery: 'gallery-2013.05.15-21-12'
-}).use('gallery-io-utils', function (Y) {
-    
-    Y.io.getJSON('/foo/bar').then(function (data) {
-        console.log(data);
-    });
-
-});
-```
-
-### Note to those using version gallery-2013.05.10-00-54
+#### Note to those using version gallery-2013.05.10-00-54
 
 Requirements are broken in this release. You should use release `gallery-2013.05.15-21-12`
