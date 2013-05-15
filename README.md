@@ -34,7 +34,7 @@ To start include the `gallery-io-utils` module.
 
 ```JavaScript
 YUI({
-    gallery: 'gallery-2013.05.10-00-54'
+    gallery: 'gallery-2013.05.15-21-12'
 }).use('gallery-io-utils', function (Y) {
     
     Y.io.getJSON('/foo/bar').then(function (data) {
@@ -44,7 +44,6 @@ YUI({
 });
 ```
 
-### Note to those using version 0.0.1
+### Note to those using version gallery-2013.05.10-00-54
 
-Requirements are broken in this release. You can still use it by doing
-`YUI(...).use('io-base', 'promise', 'gallery-io-utils', ...)`.
+Requirements are broken in this release. You should use release `gallery-2013.05.15-21-12`
