@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>js\io-utils.js</title>
+    <title>build\gallery-io-utils\gallery-io-utils.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -84,10 +84,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: js\io-utils.js</h1>
+                        <h1 class="file-heading">File: build\gallery-io-utils\gallery-io-utils.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
+YUI.add(&#x27;gallery-io-utils&#x27;, function (Y, NAME) {
+
 /**
 Promise based methods for performing IO requests.
 
@@ -205,16 +207,8 @@ Alias for Y.io.delete()
 @method DELETE
 @for io
 @static
-@deprecated
 **/
-/**
-Alias for Y.io.delete()
-
-@method del
-@for io
-@static
-**/
-Y.io.DELETE = Y.io.del = Y.io[&#x27;delete&#x27;];
+Y.io.DELETE = Y.io[&#x27;delete&#x27;];
 
 /**
 Initiaites an AJAX call with the HTTP method POST and sends the data contained
@@ -393,6 +387,9 @@ Y.Array.each([&#x27;get&#x27;, &#x27;post&#x27;, &#x27;put&#x27;, &#x27;delete&#
         return Y.io.json(uri, config);
     };
 });
+
+
+}, &#x27;@VERSION@&#x27;, {&quot;requires&quot;: [&quot;io-base&quot;, &quot;promise&quot;]});
 
     </pre>
 </div>

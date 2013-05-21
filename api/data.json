@@ -1,11 +1,29 @@
 {
     "project": {},
     "files": {
-        "js\\io-utils.js": {
-            "name": "js\\io-utils.js",
+        "build\\gallery-io-utils\\gallery-io-utils-debug.js": {
+            "name": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
             "modules": {
                 "io-extras": 1
             },
+            "classes": {},
+            "fors": {
+                "io": 1
+            },
+            "namespaces": {}
+        },
+        "build\\gallery-io-utils\\gallery-io-utils.js": {
+            "name": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "io": 1
+            },
+            "namespaces": {}
+        },
+        "js\\io-utils.js": {
+            "name": "js\\io-utils.js",
+            "modules": {},
             "classes": {},
             "fors": {
                 "io": 1
@@ -25,8 +43,8 @@
             },
             "namespaces": {},
             "tag": "module",
-            "file": "js\\io-utils.js",
-            "line": 1,
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 3,
             "description": "Promise based methods for performing IO requests."
         }
     },
@@ -44,6 +62,886 @@
         }
     },
     "classitems": [
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 9,
+            "description": "Method for initiating an ajax call.",
+            "itemtype": "method",
+            "name": "xhr",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Configuration object for the transaction.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "method",
+                            "description": "HTTP method verb (e.g., GET or POST).",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "GET"
+                        },
+                        {
+                            "name": "data",
+                            "description": "This is the name-value string that will be\n    sent as the transaction data. If the request is HTTP GET, the data become\n    part of querystring. If HTTP POST, the data are sent in the message body.",
+                            "type": "Object|String",
+                            "optional": true
+                        },
+                        {
+                            "name": "form",
+                            "description": "Form serialization configuration object. Its properties\n    are:\n    * `id` node object or id of HTML form\n    * `useDisabled` true to also serialize disabled form field values (defaults\n        to false)",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "headers",
+                            "description": "Object map of transaction headers to send to\n    the server. The object keys are the header names and the values are the\n    header values.",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "timeout",
+                            "description": "Millisecond threshold for the transaction\n    before being automatically aborted.",
+                            "type": "Number",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 61,
+            "description": "Initiaites an AJAX call with the HTTP method GET.",
+            "itemtype": "method",
+            "name": "get",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 72,
+            "description": "Initiaites an AJAX call with the HTTP method POST.",
+            "itemtype": "method",
+            "name": "post",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 83,
+            "description": "Initiaites an AJAX call with the HTTP method PUT.",
+            "itemtype": "method",
+            "name": "put",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 94,
+            "description": "Initiaites an AJAX call with the HTTP method DELETE.",
+            "itemtype": "method",
+            "name": "delete",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 114,
+            "description": "Alias for Y.io.delete()",
+            "itemtype": "method",
+            "name": "DELETE",
+            "static": 1,
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 123,
+            "description": "Initiaites an AJAX call with the HTTP method POST and sends the data contained\nin the specified form element.",
+            "itemtype": "method",
+            "name": "postForm",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "selector",
+                    "description": "CSS selector or Y.Node instance pointing to a form\n    element.",
+                    "type": "String|Node"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 148,
+            "description": "Inserts one or more scripts tags.",
+            "itemtype": "method",
+            "name": "script",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Path or array of paths to the scripts.",
+                    "type": "String|String[]"
+                },
+                {
+                    "name": "options",
+                    "description": "Configuration options",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 158,
+            "description": "Inserts one or more CSS files into the page.",
+            "itemtype": "method",
+            "name": "css",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Path or array of paths to the CSS files.",
+                    "type": "String|String[]"
+                },
+                {
+                    "name": "options",
+                    "description": "Configuration options",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 182,
+            "description": "Performs a JSONP request. Requires the JSONP module.",
+            "itemtype": "method",
+            "name": "jsonp",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "The url of the JSONP service with the {callback}\n    placeholder where the callback function name typically goes",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Configuration options for the request",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "timeout",
+                            "description": "Millisecond threshold for the transaction\n    before being automatically aborted",
+                            "type": "Number",
+                            "optional": true
+                        },
+                        {
+                            "name": "format",
+                            "description": "Preprocessor function to stitch together\n    the supplied URL (first argument), the proxy function name (internally\n    generated), and any additional arguments passed to JSONPRequest#send()",
+                            "type": "Function",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 221,
+            "description": "Performs an AJAX request and parses the response as JSON notation.\nRequires the JSON module.",
+            "itemtype": "method",
+            "name": "json",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 244,
+            "description": "Performs an AJAX request with the GET HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "getJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 256,
+            "description": "Performs an AJAX request with the POST HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "postJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 268,
+            "description": "Performs an AJAX request with the PUT HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "putJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils-debug.js",
+            "line": 280,
+            "description": "Performs an AJAX request with the DELETE HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "deleteJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 9,
+            "description": "Method for initiating an ajax call.",
+            "itemtype": "method",
+            "name": "xhr",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Configuration object for the transaction.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "method",
+                            "description": "HTTP method verb (e.g., GET or POST).",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "GET"
+                        },
+                        {
+                            "name": "data",
+                            "description": "This is the name-value string that will be\n    sent as the transaction data. If the request is HTTP GET, the data become\n    part of querystring. If HTTP POST, the data are sent in the message body.",
+                            "type": "Object|String",
+                            "optional": true
+                        },
+                        {
+                            "name": "form",
+                            "description": "Form serialization configuration object. Its properties\n    are:\n    * `id` node object or id of HTML form\n    * `useDisabled` true to also serialize disabled form field values (defaults\n        to false)",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "headers",
+                            "description": "Object map of transaction headers to send to\n    the server. The object keys are the header names and the values are the\n    header values.",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "timeout",
+                            "description": "Millisecond threshold for the transaction\n    before being automatically aborted.",
+                            "type": "Number",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 61,
+            "description": "Initiaites an AJAX call with the HTTP method GET.",
+            "itemtype": "method",
+            "name": "get",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 72,
+            "description": "Initiaites an AJAX call with the HTTP method POST.",
+            "itemtype": "method",
+            "name": "post",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 83,
+            "description": "Initiaites an AJAX call with the HTTP method PUT.",
+            "itemtype": "method",
+            "name": "put",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 94,
+            "description": "Initiaites an AJAX call with the HTTP method DELETE.",
+            "itemtype": "method",
+            "name": "delete",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 114,
+            "description": "Alias for Y.io.delete()",
+            "itemtype": "method",
+            "name": "DELETE",
+            "static": 1,
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 123,
+            "description": "Initiaites an AJAX call with the HTTP method POST and sends the data contained\nin the specified form element.",
+            "itemtype": "method",
+            "name": "postForm",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "selector",
+                    "description": "CSS selector or Y.Node instance pointing to a form\n    element.",
+                    "type": "String|Node"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 148,
+            "description": "Inserts one or more scripts tags.",
+            "itemtype": "method",
+            "name": "script",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Path or array of paths to the scripts.",
+                    "type": "String|String[]"
+                },
+                {
+                    "name": "options",
+                    "description": "Configuration options",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 158,
+            "description": "Inserts one or more CSS files into the page.",
+            "itemtype": "method",
+            "name": "css",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Path or array of paths to the CSS files.",
+                    "type": "String|String[]"
+                },
+                {
+                    "name": "options",
+                    "description": "Configuration options",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 182,
+            "description": "Performs a JSONP request. Requires the JSONP module.",
+            "itemtype": "method",
+            "name": "jsonp",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "The url of the JSONP service with the {callback}\n    placeholder where the callback function name typically goes",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Configuration options for the request",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "timeout",
+                            "description": "Millisecond threshold for the transaction\n    before being automatically aborted",
+                            "type": "Number",
+                            "optional": true
+                        },
+                        {
+                            "name": "format",
+                            "description": "Preprocessor function to stitch together\n    the supplied URL (first argument), the proxy function name (internally\n    generated), and any additional arguments passed to JSONPRequest#send()",
+                            "type": "Function",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 221,
+            "description": "Performs an AJAX request and parses the response as JSON notation.\nRequires the JSON module.",
+            "itemtype": "method",
+            "name": "json",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 244,
+            "description": "Performs an AJAX request with the GET HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "getJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 256,
+            "description": "Performs an AJAX request with the POST HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "postJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 268,
+            "description": "Performs an AJAX request with the PUT HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "putJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "build\\gallery-io-utils\\gallery-io-utils.js",
+            "line": 280,
+            "description": "Performs an AJAX request with the DELETE HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "deleteJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "io-extras"
+        },
         {
             "file": "js\\io-utils.js",
             "line": 7,
@@ -219,12 +1117,23 @@
             "itemtype": "method",
             "name": "DELETE",
             "static": 1,
+            "deprecated": true,
             "class": "io",
             "module": "io-extras"
         },
         {
             "file": "js\\io-utils.js",
-            "line": 121,
+            "line": 120,
+            "description": "Alias for Y.io.delete()",
+            "itemtype": "method",
+            "name": "del",
+            "static": 1,
+            "class": "io",
+            "module": "io-extras"
+        },
+        {
+            "file": "js\\io-utils.js",
+            "line": 129,
             "description": "Initiaites an AJAX call with the HTTP method POST and sends the data contained\nin the specified form element.",
             "itemtype": "method",
             "name": "postForm",
@@ -256,7 +1165,7 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 146,
+            "line": 154,
             "description": "Inserts one or more scripts tags.",
             "itemtype": "method",
             "name": "script",
@@ -283,7 +1192,7 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 156,
+            "line": 164,
             "description": "Inserts one or more CSS files into the page.",
             "itemtype": "method",
             "name": "css",
@@ -310,7 +1219,7 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 180,
+            "line": 188,
             "description": "Performs a JSONP request. Requires the JSONP module.",
             "itemtype": "method",
             "name": "jsonp",
@@ -351,7 +1260,7 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 219,
+            "line": 227,
             "description": "Performs an AJAX request and parses the response as JSON notation.\nRequires the JSON module.",
             "itemtype": "method",
             "name": "json",
@@ -378,7 +1287,7 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 242,
+            "line": 250,
             "description": "Performs an AJAX request with the GET HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
             "itemtype": "method",
             "name": "getJSON",
@@ -405,7 +1314,7 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 254,
+            "line": 262,
             "description": "Performs an AJAX request with the POST HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
             "itemtype": "method",
             "name": "postJSON",
@@ -432,7 +1341,7 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 266,
+            "line": 274,
             "description": "Performs an AJAX request with the PUT HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
             "itemtype": "method",
             "name": "putJSON",
@@ -459,7 +1368,7 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 278,
+            "line": 286,
             "description": "Performs an AJAX request with the DELETE HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
             "itemtype": "method",
             "name": "deleteJSON",
