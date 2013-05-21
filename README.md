@@ -34,7 +34,7 @@ IO Utils includes the following functions:
 * `Y.io.post`. Makes an Ajax request with HTTP method POST.
 * `Y.io.put`. Makes an Ajax request with HTTP method PUT.
 * `Y.io.delete`. Makes an Ajax request with HTTP method DELETE.
-* `Y.io.DELETE`. Alias for `Y.io.delete`.
+* `Y.io.del`. Alias for `Y.io.delete`.
 * `Y.io.json`. Makes an Ajax request and parses the result as JSON. Requires the
 `json` module.
 * `Y.io.getJSON`. Makes an Ajax request with HTTP method GET and parses the

@@ -115,8 +115,16 @@ Alias for Y.io.delete()
 @method DELETE
 @for io
 @static
+@deprecated
 **/
-Y.io.DELETE = Y.io['delete'];
+/**
+Alias for Y.io.delete()
+
+@method del
+@for io
+@static
+**/
+Y.io.DELETE = Y.io.del = Y.io['delete'];
 
 /**
 Initiaites an AJAX call with the HTTP method POST and sends the data contained
