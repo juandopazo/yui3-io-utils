@@ -4,12 +4,12 @@ YUI.add("yuidoc-meta", function(Y) {
         "io"
     ],
     "modules": [
-        "io-extras"
+        "gallery-io-utils"
     ],
     "allModules": [
         {
-            "displayName": "io-extras",
-            "name": "io-extras",
+            "displayName": "gallery-io-utils",
+            "name": "gallery-io-utils",
             "description": "Promise based methods for performing IO requests."
         }
     ]

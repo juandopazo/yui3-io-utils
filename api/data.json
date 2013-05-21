@@ -4,7 +4,7 @@
         "js\\io-utils.js": {
             "name": "js\\io-utils.js",
             "modules": {
-                "io-extras": 1
+                "gallery-io-utils": 1
             },
             "classes": {},
             "fors": {
@@ -14,8 +14,8 @@
         }
     },
     "modules": {
-        "io-extras": {
-            "name": "io-extras",
+        "gallery-io-utils": {
+            "name": "gallery-io-utils",
             "submodules": {},
             "classes": {
                 "io": 1
@@ -39,7 +39,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "io-extras",
+            "module": "gallery-io-utils",
             "namespace": ""
         }
     },
@@ -102,7 +102,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -129,7 +129,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -156,7 +156,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -183,7 +183,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -210,7 +210,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -221,7 +221,7 @@
             "static": 1,
             "deprecated": true,
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -231,7 +231,7 @@
             "name": "del",
             "static": 1,
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -263,7 +263,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -290,7 +290,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -317,7 +317,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -358,7 +358,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -385,7 +385,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -412,7 +412,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -439,7 +439,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -466,7 +466,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         },
         {
             "file": "js\\io-utils.js",
@@ -493,7 +493,7 @@
                 "type": "Promise"
             },
             "class": "io",
-            "module": "io-extras"
+            "module": "gallery-io-utils"
         }
     ],
     "warnings": []
