@@ -1,7 +1,7 @@
 /**
 Promise based methods for performing IO requests.
 
-@module io-extras
+@module gallery-io-utils
 **/
 
 /**
