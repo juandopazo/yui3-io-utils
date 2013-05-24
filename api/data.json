@@ -428,31 +428,9 @@
                     "type": "String"
                 },
                 {
-                    "name": "options",
-                    "description": "Same configuration options as Y.io.xhr()",
-                    "type": "Object",
-                    "optional": true
-                }
-            ],
-            "return": {
-                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
-                "type": "Promise"
-            },
-            "class": "io",
-            "module": "gallery-io-utils"
-        },
-        {
-            "file": "js\\io-utils.js",
-            "line": 274,
-            "description": "Performs an AJAX request with the PUT HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
-            "itemtype": "method",
-            "name": "putJSON",
-            "static": 1,
-            "params": [
-                {
-                    "name": "uri",
-                    "description": "Qualified path to transaction resource.",
-                    "type": "String"
+                    "name": "data",
+                    "description": "Data to send encoded as JSON",
+                    "type": "Object"
                 },
                 {
                     "name": "options",
@@ -470,7 +448,39 @@
         },
         {
             "file": "js\\io-utils.js",
-            "line": 286,
+            "line": 275,
+            "description": "Performs an AJAX request with the PUT HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
+            "itemtype": "method",
+            "name": "putJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "uri",
+                    "description": "Qualified path to transaction resource.",
+                    "type": "String"
+                },
+                {
+                    "name": "data",
+                    "description": "Data to send encoded as JSON",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "Same configuration options as Y.io.xhr()",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise for the response object. Contains an extra\n    `abort()` method to cancel the request.",
+                "type": "Promise"
+            },
+            "class": "io",
+            "module": "gallery-io-utils"
+        },
+        {
+            "file": "js\\io-utils.js",
+            "line": 288,
             "description": "Performs an AJAX request with the DELETE HTTP method and parses the response as\nJSON notation. Requires the JSON module.",
             "itemtype": "method",
             "name": "deleteJSON",

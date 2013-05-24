@@ -357,6 +357,7 @@ JSON notation. Requires the JSON module.
 @for io
 @static
 @param {String} uri Qualified path to transaction resource.
+@param {Object} data Data to send encoded as JSON
 @param {Object} [options] Same configuration options as Y.io.xhr()
 @return {Promise} Promise for the response object. Contains an extra
     &#x60;abort()&#x60; method to cancel the request.
@@ -369,6 +370,7 @@ JSON notation. Requires the JSON module.
 @for io
 @static
 @param {String} uri Qualified path to transaction resource.
+@param {Object} data Data to send encoded as JSON
 @param {Object} [options] Same configuration options as Y.io.xhr()
 @return {Promise} Promise for the response object. Contains an extra
     &#x60;abort()&#x60; method to cancel the request.
@@ -385,10 +387,20 @@ JSON notation. Requires the JSON module.
 @return {Promise} Promise for the response object. Contains an extra
     &#x60;abort()&#x60; method to cancel the request.
 **/
-Y.Array.each([&#x27;get&#x27;, &#x27;post&#x27;, &#x27;put&#x27;, &#x27;delete&#x27;], function (verb) {
+Y.Array.each([&#x27;get&#x27;, &#x27;delete&#x27;], function (verb) {
     Y.io[verb + &#x27;JSON&#x27;] = function (uri, config) {
         config = config || {};
         config.method = verb.toUpperCase();
+
+        return Y.io.json(uri, config);
+    };
+});
+
+Y.Array.each([&#x27;post&#x27;, &#x27;put&#x27;], function (verb) {
+    Y.io[verb + &#x27;JSON&#x27;] = function (uri, data, config) {
+        config = config || {};
+        config.method = verb.toUpperCase();
+        config.data = Y.JSON.stringify(data);
 
         return Y.io.json(uri, config);
     };
