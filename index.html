@@ -69,7 +69,9 @@
         <p>Next, create a new YUI instance for your application and populate it with the modules you need by specifying them as arguments to the <code>YUI().use()</code> method. YUI will automatically load any dependencies required by the modules you specify.</p>
 
 <pre><code data-language="javascript">// Create a new YUI instance and populate it with the required modules.
-YUI().use('gallery-io-utils', function (Y) {
+YUI({
+    gallery: 'gallery-2013.05.15-21-12'
+}).use('gallery-io-utils', function (Y) {
     // IO Utils is available and ready for use
 
     // Perform a GET Ajax request and parse it as JSON
@@ -171,6 +173,19 @@ YUI().use('gallery-io-utils', function (Y) {
             </tbody>
         </table>
 
+        <h2>Release Notes</h2>
+        <h3>Next</h3>
+        <ul>
+            <li>Y.io.postJSON and Y.io.putJSON now take a second "data" parameter</li>
+        </ul>
+        <h3>gallery-2013.05.15-21-12</h3>
+        <ul>
+            <li>Fixed roken requirements</li>
+        </ul>
+        <h3>gallery-2013.05.10-00-54</h3>
+        <ul>
+            <li>Broken requirements</li>
+        </ul>
 
         <!-- TYPEKIT -->
         <script type="text/javascript" src="//use.typekit.net/yql3mar.js"></script>
