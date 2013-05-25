@@ -1,5 +1,24 @@
 {{>getting-started}}
 
+<h2>Using promises for IO</h2>
+
+<p>All utility methods included in this module return a promise instead of taking callbacks or event listeners. Promises allow you to pass around a token to the future value of the response. When you are ready to use that value, call <code>then()</code> on the promise.</p>
+
+```javascript
+YUI({
+    gallery: '{{gallery-build}}'
+}).use('gallery-io-utils', function (Y) {
+
+    var template = Y.Templates.someTemplate,
+        node = Y.one('#foo');
+    
+    Y.io.getJSON('/foo').then(function (data) {
+        foo.setHTML(template(data)));
+    });
+
+});
+```
+
 <h2>List of utilities</h2>
 <table class="yui3-table">
     <thead>
