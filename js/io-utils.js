@@ -260,32 +260,6 @@ JSON notation. Requires the JSON module.
     `abort()` method to cancel the request.
 **/
 /**
-Performs an AJAX request with the POST HTTP method and parses the response as
-JSON notation. Requires the JSON module.
-
-@method postJSON
-@for io
-@static
-@param {String} uri Qualified path to transaction resource.
-@param {Object} data Data to send encoded as JSON
-@param {Object} [options] Same configuration options as Y.io.xhr()
-@return {Promise} Promise for the response object. Contains an extra
-    `abort()` method to cancel the request.
-**/
-/**
-Performs an AJAX request with the PUT HTTP method and parses the response as
-JSON notation. Requires the JSON module.
-
-@method putJSON
-@for io
-@static
-@param {String} uri Qualified path to transaction resource.
-@param {Object} data Data to send encoded as JSON
-@param {Object} [options] Same configuration options as Y.io.xhr()
-@return {Promise} Promise for the response object. Contains an extra
-    `abort()` method to cancel the request.
-**/
-/**
 Performs an AJAX request with the DELETE HTTP method and parses the response as
 JSON notation. Requires the JSON module.
 
@@ -306,12 +280,40 @@ Y.Array.each(['get', 'delete'], function (verb) {
     };
 });
 
+/**
+Performs an AJAX request with the POST HTTP method and parses the response as
+JSON notation. Requires the JSON module.
+
+@method postJSON
+@for io
+@static
+@param {String} uri Qualified path to transaction resource.
+@param {Object|Promise} data Data to send encoded as JSON
+@param {Object} [options] Same configuration options as Y.io.xhr()
+@return {Promise} Promise for the response object. Contains an extra
+    `abort()` method to cancel the request.
+**/
+/**
+Performs an AJAX request with the PUT HTTP method and parses the response as
+JSON notation. Requires the JSON module.
+
+@method putJSON
+@for io
+@static
+@param {String} uri Qualified path to transaction resource.
+@param {Object|Promise} data Data to send encoded as JSON
+@param {Object} [options] Same configuration options as Y.io.xhr()
+@return {Promise} Promise for the response object. Contains an extra
+    `abort()` method to cancel the request.
+**/
 Y.Array.each(['post', 'put'], function (verb) {
     Y.io[verb + 'JSON'] = function (uri, data, config) {
         config = config || {};
         config.method = verb.toUpperCase();
-        config.data = Y.JSON.stringify(data);
 
-        return Y.io.json(uri, config);
+        return Y.when(data, function (obj) {
+            config.data = Y.JSON.stringify(obj);
+            return Y.io.json(uri, config);
+        });
     };
 });
