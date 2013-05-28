@@ -51,6 +51,12 @@ IO Utils includes the following functions:
 
 All these functions return a promise. See [the API Docs](http://juandopazo.github.io/yui3-io-utils/api/classes/io.html) for more details.
 
-#### Note to those using version gallery-2013.05.10-00-54
 
-Requirements are broken in this release. You should use release `gallery-2013.05.15-21-12`
+Release Notes
+-------------
+
+#### gallery-2013.05.15-21-12
+* Fixes broken requirements
+
+#### gallery-2013.05.10-00-54
+* Requirements are broken in this version
