@@ -13,7 +13,7 @@ YUI({
         node = Y.one('#foo');
     
     Y.io.getJSON('/foo').then(function (data) {
-        foo.setHTML(template(data)));
+        node.setHTML(template(data)));
     });
 
 });
