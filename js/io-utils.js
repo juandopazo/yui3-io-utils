@@ -4,6 +4,9 @@ Promise based methods for performing IO requests.
 @module gallery-io-utils
 **/
 
+var MIME_JSON = 'application/json',
+    CONTENT_TYPE = 'Content-Type';
+
 /**
 Method for initiating an ajax call.
 
@@ -237,6 +240,15 @@ Requires the JSON module.
     `abort()` method to cancel the request.
 **/
 Y.io.json = function (uri, options) {
+    options = options || {};
+
+    // Force the use of the correct headers
+    // Since a JSON response is expected, ask for it with the Accept header
+    if (!options.headers) {
+        options.headers = {};
+    }
+    options.headers.Accept = MIME_JSON;
+
     var promise = Y.io.xhr(uri, options);
 
     return Y.mix(promise.then(function (xhr) {
@@ -272,11 +284,11 @@ JSON notation. Requires the JSON module.
     `abort()` method to cancel the request.
 **/
 Y.Array.each(['get', 'delete'], function (verb) {
-    Y.io[verb + 'JSON'] = function (uri, config) {
-        config = config || {};
-        config.method = verb.toUpperCase();
+    Y.io[verb + 'JSON'] = function (uri, options) {
+        options = options || {};
+        options.method = verb.toUpperCase();
 
-        return Y.io.json(uri, config);
+        return Y.io.json(uri, options);
     };
 });
 
@@ -307,13 +319,21 @@ JSON notation. Requires the JSON module.
     `abort()` method to cancel the request.
 **/
 Y.Array.each(['post', 'put'], function (verb) {
-    Y.io[verb + 'JSON'] = function (uri, data, config) {
-        config = config || {};
-        config.method = verb.toUpperCase();
+    Y.io[verb + 'JSON'] = function (uri, data, options) {
+        options = options || {};
+        options.method = verb.toUpperCase();
+
+        if (!options.headers) {
+            options.headers = {};
+        }
+        if (!options.headers[CONTENT_TYPE]) {
+            options.headers[CONTENT_TYPE] = MIME_JSON;
+        }
 
         return Y.when(data, function (obj) {
-            config.data = Y.JSON.stringify(obj);
-            return Y.io.json(uri, config);
+            options.data = options.headers[CONTENT_TYPE] === MIME_JSON ?
+                            Y.JSON.stringify(obj) : obj;
+            return Y.io.json(uri, options);
         });
     };
 });
