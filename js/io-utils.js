@@ -252,7 +252,7 @@ Y.io.json = function (uri, options) {
     var promise = Y.io.xhr(uri, options);
 
     return Y.mix(promise.then(function (xhr) {
-        return Y.JSON.parse(xhr.responseText);
+        return Y.JSON.parse(xhr.responseText, options.reviver);
     }), {
         // pass around the abort function
         abort: promise.abort
