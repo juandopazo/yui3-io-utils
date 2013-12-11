@@ -235,7 +235,9 @@ Requires the JSON module.
 @for io
 @static
 @param {String} uri Qualified path to transaction resource.
-@param {Object} [options] Same configuration options as Y.io.xhr()
+@param {Object} [options] Same configuration options as Y.io.xhr() with an extra
+                `reviver` option which is a reviver function for the `JSON.parse`
+                algorithm.
 @return {Promise} Promise for the response object. Contains an extra
     `abort()` method to cancel the request.
 **/
@@ -267,7 +269,7 @@ JSON notation. Requires the JSON module.
 @for io
 @static
 @param {String} uri Qualified path to transaction resource.
-@param {Object} [options] Same configuration options as Y.io.xhr()
+@param {Object} [options] Same configuration options as Y.io.json()
 @return {Promise} Promise for the response object. Contains an extra
     `abort()` method to cancel the request.
 **/
@@ -279,7 +281,7 @@ JSON notation. Requires the JSON module.
 @for io
 @static
 @param {String} uri Qualified path to transaction resource.
-@param {Object} [options] Same configuration options as Y.io.xhr()
+@param {Object} [options] Same configuration options as Y.io.json()
 @return {Promise} Promise for the response object. Contains an extra
     `abort()` method to cancel the request.
 **/
@@ -301,7 +303,7 @@ JSON notation. Requires the JSON module.
 @static
 @param {String} uri Qualified path to transaction resource.
 @param {Object|Promise} data Data to send encoded as JSON
-@param {Object} [options] Same configuration options as Y.io.xhr()
+@param {Object} [options] Same configuration options as Y.io.json()
 @return {Promise} Promise for the response object. Contains an extra
     `abort()` method to cancel the request.
 **/
@@ -314,7 +316,7 @@ JSON notation. Requires the JSON module.
 @static
 @param {String} uri Qualified path to transaction resource.
 @param {Object|Promise} data Data to send encoded as JSON
-@param {Object} [options] Same configuration options as Y.io.xhr()
+@param {Object} [options] Same configuration options as Y.io.json()
 @return {Promise} Promise for the response object. Contains an extra
     `abort()` method to cancel the request.
 **/
