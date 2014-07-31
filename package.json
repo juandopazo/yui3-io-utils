@@ -1,6 +1,6 @@
 {
     "name": "gallery-io-utils",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "YUI 3 promise based IO utilities",
     "author": "Juan Ignacio Dopazo <dopazo.juan@gmail.com>",
     "bugs": {
