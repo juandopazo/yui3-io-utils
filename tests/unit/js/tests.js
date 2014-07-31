@@ -108,7 +108,7 @@ YUI.add('module-tests', function(Y) {
         },
 
         'DELETE HTTP request': function () {
-            this.success(Y.io.DELETE('echo/delete/?response=helloworld'), function (xhr) {
+            this.success(Y.io.del('echo/delete/?response=helloworld'), function (xhr) {
                 Assert.areEqual('helloworld', xhr.responseText, 'DELETE request failure');
             });
 
