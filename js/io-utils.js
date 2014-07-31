@@ -115,19 +115,11 @@ Y.Array.each(['get', 'post', 'put', 'delete'], function (method) {
 /**
 Alias for Y.io.delete()
 
-@method DELETE
-@for io
-@static
-@deprecated
-**/
-/**
-Alias for Y.io.delete()
-
 @method del
 @for io
 @static
 **/
-Y.io.DELETE = Y.io.del = Y.io['delete'];
+Y.io.del = Y.io['delete'];
 
 /**
 Initiaites an AJAX call with the HTTP method POST and sends the data contained
